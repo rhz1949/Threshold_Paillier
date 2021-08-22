@@ -46,9 +46,6 @@ def keygen():
 
     d = m * modinv(m, n)
 
-    print("d mod n = ", d % n)
-    print("d mod m = ", d % m)
-
     return pk, sk, m, d
 
 def encipher(plaintext, pk):
@@ -97,7 +94,7 @@ def combining(arr_pa_de, pk):
             if(i != j):
                 temp_com = temp_com * (-j)
                 temp_com1 = temp_com1 * (i - j)
-        lam.append(temp_com / temp_com1)
+        lam.append(temp_com // temp_com1)
 
     c = 1
     for i in range(length):
